@@ -1,6 +1,9 @@
+import { useRef } from "react";
 import "./App.css";
 
 function App() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   return (
     <div className="app">
       <header>
@@ -11,10 +14,12 @@ function App() {
       </header>
       <main className="main_content">
         <div className="canvas_container">
-          <canvas width={300} height={200} />
-          <div className="delete_me_message">
-            TO BE IMPLEMENTED: canvas content (delete this tag).
-          </div>
+          <canvas
+            width={300}
+            height={200}
+            ref={canvasRef}
+            style={{ border: "1px solid red" }}
+          />
         </div>
         <div className="connected_users">
           TO BE IMPLEMENTED: Connected users go here.
